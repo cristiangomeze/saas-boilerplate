@@ -12,8 +12,8 @@ class DeleteUser
      */
     public function delete($user)
     {
-        $user->deleteProfilePhoto();
-        $user->tokens->each->delete();
+        //$user->deleteProfilePhoto();
+        //$user->tokens->each->delete();
         $user->delete();
     }
 }
