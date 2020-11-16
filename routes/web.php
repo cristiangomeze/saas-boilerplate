@@ -17,9 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['middleware' => ['auth', 'verified']], function () {
-    Route::get('/dashboard', fn () => view('dashboard'));
-    Route::get('/user/profile', [App\Http\Controllers\Livewire\UserProfileController::class, 'show'])->name('profile.show');
-});
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
 
-require __DIR__.'/auth.php';
+require __DIR__.'/fortify.php';
+require __DIR__.'/jetstream.php';

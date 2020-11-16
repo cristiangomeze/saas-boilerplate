@@ -1,15 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bd383410-17df-4590-b995-26b49d89c780" name="Default Changelist" comment="" />
+    <list default="true" id="bd383410-17df-4590-b995-26b49d89c780" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/database/migrations/tenant/2014_10_12_100000_create_password_resets_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/tenant/2014_10_12_200000_add_two_factor_columns_to_users_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/tenant/2014_10_12_300000_create_personal_access_tokens_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/tenant/2020_11_16_172548_create_jobs_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Saas-boilerplate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Saas-boilerplate.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/Boilerplate/DeleteUser.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/Boilerplate/PasswordValidationRules.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/Boilerplate/UpdateUserPassword.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/Boilerplate/UpdateUserProfileInformation.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthenticatedSessionController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ConfirmablePasswordController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/EmailVerificationNotificationController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/EmailVerificationPromptController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/NewPasswordController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/PasswordResetLinkController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisteredUserController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/VerifyEmailController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Livewire/UserProfileController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/DeleteUserForm.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/LogoutOtherBrowserSessionsForm.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/NavigationDropdown.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/UpdatePasswordForm.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/UpdateProfileInformationForm.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Auth/LoginRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/session.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/session.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/tenancy.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/tenancy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/tenant/2020_11_16_172545_create_failed_jobs_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_15_000010_create_tenants_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_17_000010_create_tenants_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_15_000020_create_domains_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_17_000020_create_domains_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_14_184034_create_sessions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_400000_create_sessions_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/tenant/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/tenant/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/tenant/2020_11_14_184034_create_sessions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/tenant/2014_10_12_400000_create_sessions_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/confirm-password.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/forgot-password.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/reset-password.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/verify-email.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/action-message.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/action-section.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/application-logo.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/application-mark.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/auth-card.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/auth-session-status.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/auth-validation-errors.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/button.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/danger-button.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/dialog-modal.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/dropdown-link.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/dropdown.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/form-section.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/input-error.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/input.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/label.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/modal.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/nav-link.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/responsive-nav-link.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/secondary-button.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/section-border.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/section-title.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/guest.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/navigation-dropdown.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile/delete-user-form.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile/logout-other-browser-sessions-form.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile/show.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile/update-password-form.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile/update-profile-information-form.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/auth.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/tenant.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/tenant.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -118,17 +209,23 @@
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/nunomaduro/collision" />
       <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
-      <path value="$PROJECT_DIR$/vendor/laravel/breeze" />
       <path value="$PROJECT_DIR$/vendor/stancl/tenancy" />
       <path value="$PROJECT_DIR$/vendor/stancl/virtualcolumn" />
       <path value="$PROJECT_DIR$/vendor/stancl/jobpipeline" />
       <path value="$PROJECT_DIR$/vendor/symfony/debug" />
       <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
       <path value="$PROJECT_DIR$/vendor/maximebf/debugbar" />
+      <path value="$PROJECT_DIR$/vendor/bacon/bacon-qr-code" />
       <path value="$PROJECT_DIR$/vendor/livewire/livewire" />
-      <path value="$PROJECT_DIR$/vendor/mobiledetect/mobiledetectlib" />
-      <path value="$PROJECT_DIR$/vendor/jaybizzle/crawler-detect" />
       <path value="$PROJECT_DIR$/vendor/jenssegers/agent" />
+      <path value="$PROJECT_DIR$/vendor/jaybizzle/crawler-detect" />
+      <path value="$PROJECT_DIR$/vendor/laravel/fortify" />
+      <path value="$PROJECT_DIR$/vendor/laravel/jetstream" />
+      <path value="$PROJECT_DIR$/vendor/laravel/sanctum" />
+      <path value="$PROJECT_DIR$/vendor/mobiledetect/mobiledetectlib" />
+      <path value="$PROJECT_DIR$/vendor/dasprid/enum" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/constant_time_encoding" />
+      <path value="$PROJECT_DIR$/vendor/pragmarx/google2fa" />
     </include_path>
   </component>
   <component name="ProjectId" id="1kIAfGDyUyOOQZiKUhcG3C0UIBX" />
@@ -165,6 +262,8 @@
       <option name="presentableId" value="Default" />
       <updated>1605377832579</updated>
       <workItem from="1605377833768" duration="13733000" />
+      <workItem from="1605394540060" duration="599000" />
+      <workItem from="1605545612556" duration="6971000" />
     </task>
     <servers />
   </component>
@@ -176,9 +275,20 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="368" y="194" width="620" height="404" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1366.741@0.27.1366.741" timestamp="1605387411381" />
-    <state x="346" y="89" width="672" height="503" key="search.everywhere.popup" timestamp="1605391181031">
+    <state x="346" y="89" width="672" height="503" key="search.everywhere.popup" timestamp="1605555286660">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="346" y="89" width="672" height="503" key="search.everywhere.popup/0.27.1366.741@0.27.1366.741" timestamp="1605391181031" />
+    <state x="346" y="89" width="672" height="503" key="search.everywhere.popup/0.27.1366.741@0.27.1366.741" timestamp="1605555286660" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Actions/Boilerplate/DeleteUser.php</url>
+          <line>15</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

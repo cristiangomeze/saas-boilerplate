@@ -16,7 +16,7 @@
         @livewireStyles
 
         <!-- Scripts -->
-        <script src="{{ global_asset('js/app.js') }}" defer></script>
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.js" defer></script>
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
