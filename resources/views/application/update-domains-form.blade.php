@@ -36,11 +36,11 @@
                         </div>
                         @if(! $domain->is_primary)
                             <div class="flex items-between space-x-2">
-                                <x-jet-secondary-button type="button">
+                                <x-jet-secondary-button type="button" wire:click="makePrimary({{$domain->id}})">
                                     {{ __('Make primary') }}
                                 </x-jet-secondary-button>
                                 @if ('Domain' === $domain->type)
-                                    <x-jet-secondary-button type="button" class="text-red-600">
+                                    <x-jet-secondary-button type="button" class="text-red-600" wire:click="deleteCustomDomain({{$domain->id}})">
                                         {{ __('Delete') }}
                                     </x-jet-secondary-button>
                                 @endif
