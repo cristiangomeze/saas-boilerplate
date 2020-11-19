@@ -23,6 +23,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
+        \Stancl\Tenancy\Middleware\InitializeTenancyByDomain::$onFail = fn () => redirect(config('app.url'));
+        \Stancl\Tenancy\Middleware\InitializeTenancyBySubdomain::$onFail = fn () => redirect(config('app.url'));
     }
 }
