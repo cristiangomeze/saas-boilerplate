@@ -13,6 +13,16 @@
                 <x-jet-section-border />
 
                 @livewire('update-domains-form')
+
+                <x-jet-section-border />
+
+                @livewire('add-domain-form')
+
+                <x-jet-section-border />
+
+                @livewire('update-fallback-subdomain-form')
+
+
             @else
                 @livewire('create-application-form')
             @endif

@@ -70,12 +70,15 @@ class CreateApplicationForm extends Component
 
         DB::transaction(function () {
             $tenant = auth()->user()->tenant()->create(['name' => $this->name]);
-            $tenant->domains()->create(['domain' => $this->domain]);
+            $tenant->domains()->create([
+                'domain' => $this->domain,
+                'is_primary' => true,
+            ]);
         });
 
         $this->confirmingApplicationCreate = false;
 
-        $this->emit('created');
+        $this->emit('Added');
 
         $this->dispatchBrowserEvent('confirming-redirect');
     }

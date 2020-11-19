@@ -57,6 +57,16 @@
 
                         <div class="border-t border-gray-100"></div>
 
+                        <div class="block px-4 py-2 text-xs text-gray-400">
+                            {{ __('Manage Application') }}
+                        </div>
+
+                        <x-jet-dropdown-link href="{{ route('application.show') }}">
+                            {{ __('Application Settings') }}
+                        </x-jet-dropdown-link>
+
+                        <div class="border-t border-gray-100"></div>
+
                         <!-- Team Management -->
                         @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                             <div class="block px-4 py-2 text-xs text-gray-400">

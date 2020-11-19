@@ -17,7 +17,7 @@
                 {{ __('Create') }}
             </x-jet-button>
 
-            <x-jet-action-message class="ml-3" on="created" x-on:confirming-redirect.window="setTimeout(() => window.location.href='{{route('user.application')}}', 350)">
+            <x-jet-action-message class="ml-3" on="created" x-on:confirming-redirect.window="setTimeout(() => window.location.href='{{route('application.show')}}', 350)">
                 {{ __('Done.') }}
             </x-jet-action-message>
         </div>
@@ -39,13 +39,13 @@
                     <x-jet-input-error for="name" class="mt-2" />
 
                     <div class="flex flex-wrap items-stretch w-3/4 mt-8 relative">
-                        <x-jet-input class="flex-shrink flex-grow flex-auto leading-normal w-px flex-1 border h-10 border-grey-light rounded rounded-r-none px-3 relative" 
-                            type="text" 
+                        <x-jet-input class="flex-shrink flex-grow flex-auto leading-normal w-px flex-1 border h-10 border-grey-light rounded rounded-r-none px-3 relative"
+                            type="text"
                             placeholder="{{ __('domain') }}"
                             wire:model.defer="domain" />
                         <div class="flex -mr-px">
                             <span class="flex items-center leading-normal bg-grey-lighter rounded rounded-l-none border border-l-0 border-grey-light px-3 whitespace-no-wrap text-grey-dark text-sm">{{ config('app.url') }}</span>
-                        </div>	
+                        </div>
                     </div>
                     <x-jet-input-error for="domain" class="mt-2" />
                 </div>

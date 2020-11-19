@@ -4,11 +4,6 @@ namespace App\Rules\Domain;
 
 use Illuminate\Contracts\Validation\Rule;
 
-/**
- * Class Subdomain
- *
- * @package \LVR\Subdomain
- */
 class Subdomain implements Rule
 {
     /**

@@ -6,10 +6,14 @@ use Livewire\Component;
 
 class UpdateDomainsForm extends Component
 {
-    public function render()
-    {
-        return view('application.update-domains-form');
-    }
+    /**
+     * The component's listeners.
+     *
+     * @var array
+     */
+    protected $listeners = [
+        'refresh-list-domains' => '$refresh',
+    ];
 
     /**
      * Get the domains.
@@ -20,11 +24,16 @@ class UpdateDomainsForm extends Component
     {
         return collect(
             auth()->user()->tenant->domains
-        )->map(fn ($domain) => (object) [
-                'domain' => $domain->domain,
-                'type' => true ? 'Subdomain' : 'Domain',
-                'is_primary' => false,
-                'created_at' => $domain->created_at->format('M d, Y a h:m'),
+        )->map(fn ($domain, $index) => (object) [
+            'name' => $domain->domain,
+            'type' => 0 === $index ? 'Subdomain' : 'Domain',
+            'is_primary' => $domain->is_primary,
+            'created_at' => $domain->created_at->format('M d, Y h:m a'),
         ]);
+    }
+
+    public function render()
+    {
+        return view('application.update-domains-form');
     }
 }
