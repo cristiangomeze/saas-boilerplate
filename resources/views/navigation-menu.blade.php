@@ -55,6 +55,10 @@
                             </x-jet-dropdown-link>
                         @endif
 
+                        <x-jet-dropdown-link href="{{ route('billing.show') }}">
+                            {{ __('Billing') }}
+                        </x-jet-dropdown-link>
+
                         <div class="border-t border-gray-100"></div>
 
                         <div class="block px-4 py-2 text-xs text-gray-400">

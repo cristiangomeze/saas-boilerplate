@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\UserApplicationController;
+use App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +20,8 @@ Route::get('/', function () {
 
 Route::group(['middleware' => ['auth:sanctum', 'verified']],function () {
     Route::get('/dashboard', fn () => view('dashboard'))->name('dashboard');
-    Route::get('user/application', UserApplicationController::class)->name('application.show');
+    Route::get('/user/application', Controllers\UserApplicationController::class)->name('application.show');
+    Route::get('/billing', Controllers\BillingController::class)->name('billing.show');
 });
 
 require __DIR__.'/fortify.php';
