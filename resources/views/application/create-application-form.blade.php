@@ -12,15 +12,23 @@
             {{ __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vehicula aliquam iaculis. Proin tortor justo, maximus pellentesque volutpat eget, posuere et massa. Aenean ornare, ipsum sit amet porta mattis, enim nisl ullamcorper ligula, eget suscipit lectus magna et felis. ') }}
         </div>
 
+        @if($this->processBatch)
+        
+        <x-progress-bar wire:poll="updateBatchProgress" :percentage="$batchProgress"/>
+
+        <x-jet-action-message class="mt-5" on="completed" x-on:progress-bar-done.window="setTimeout(() => window.location.href='{{route('application.show')}}', 450)">
+            {{ __('Done.') }}
+        </x-jet-action-message>
+
+        @else
+
         <div class="flex items-center mt-5">
             <x-jet-button wire:click="confirmApplicationCreation" wire:loading.attr="disabled">
                 {{ __('Create') }}
             </x-jet-button>
-
-            <x-jet-action-message class="ml-3" on="created" x-on:confirming-redirect.window="setTimeout(() => window.location.href='{{route('application.show')}}', 350)">
-                {{ __('Done.') }}
-            </x-jet-action-message>
         </div>
+
+        @endif
 
         <!-- Create Application Confirmation Modal -->
         <x-jet-dialog-modal wire:model="confirmingApplicationCreate">

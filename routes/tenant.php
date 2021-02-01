@@ -26,7 +26,7 @@ Route::middleware([
     ScopeSessions::class
 ])->group(function () {
     Route::get('/', function () {
-        dd(\Illuminate\Support\Facades\Auth::user());
+        dd('Cristian');
     });
 
     require __DIR__.'/fortify.php';

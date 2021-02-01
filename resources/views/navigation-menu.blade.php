@@ -66,7 +66,7 @@
                         </div>
 
                         <x-jet-dropdown-link href="{{ route('application.show') }}">
-                            {{ __('Application Settings') }}
+                            {{ __('Application') }}
                         </x-jet-dropdown-link>
 
                         <div class="border-t border-gray-100"></div>

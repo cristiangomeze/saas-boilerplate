@@ -24,5 +24,13 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']],function () {
     Route::get('/billing', Controllers\BillingController::class)->name('billing.show');
 });
 
+Route::get('/test', function () {
+   
+
+    dd(
+      \Hash::make(\Str::random(20))
+    );
+});
+
 require __DIR__.'/fortify.php';
 require __DIR__.'/jetstream.php';
