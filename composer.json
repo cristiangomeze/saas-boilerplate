@@ -17,7 +17,8 @@
         "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.3",
-        "stancl/tenancy": "^3.2"
+        "stancl/tenancy": "^3.2",
+        "thepany/cashier-braintree": "*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",
@@ -28,6 +29,12 @@
         "nunomaduro/collision": "^5.0",
         "phpunit/phpunit": "^9.3.3"
     },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "./cashier-braintree"
+        }
+    ],
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",

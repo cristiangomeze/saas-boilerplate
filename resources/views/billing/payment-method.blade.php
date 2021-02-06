@@ -8,12 +8,12 @@
     </x-slot>
 
     <x-slot name="content">
-        <div class="max-w-xl text-sm text-gray-600">
-            {{ __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fringilla feugiat diam, at volutpat massa venenatis non. Integer nec pharetra odio. Fusce sagittis libero eu ipsum dictum, vel pretium mi tincidunt.') }}
-        </div>
+        <div id="payment-container"></div>
+
+        <input id="client-token" type="hidden" value="{{ $this->token }}">
 
         <div class="mt-5">
-            <x-jet-button>
+            <x-jet-button id="submit-button">
                 {{ __('Update Payment Method') }}
             </x-jet-button>
         </div>

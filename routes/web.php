@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,17 +20,11 @@ Route::get('/', function () {
 });
 
 Route::group(['middleware' => ['auth:sanctum', 'verified']],function () {
-    Route::get('/dashboard', fn () => view('dashboard'))->name('dashboard');
-    Route::get('/user/application', Controllers\UserApplicationController::class)->name('application.show');
-    Route::get('/billing', Controllers\BillingController::class)->name('billing.show');
-});
-
-Route::get('/test', function () {
-   
-
-    dd(
-      \Hash::make(\Str::random(20))
-    );
+    Route::get('dashboard', fn () => view('dashboard'))->name('dashboard');
+    Route::get('user/application', Controllers\UserApplicationController::class)->name('application.show');
+    Route::get('user/invoice/{invoiceId}', Controllers\UserInvoiceController::class)->name('invoice');
+    Route::get('billing', Controllers\BillingController::class)->name('billing.show');
+    Route::post('payment-method', Controllers\PaymentMethodController::class)->name('payment-method');
 });
 
 require __DIR__.'/fortify.php';

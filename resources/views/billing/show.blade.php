@@ -10,11 +10,11 @@
         
         <x-jet-section-border />
 
-        @include('billing.payment-method')
+        @livewire('billing.payment-method')
 
         <x-jet-section-border />
 
-        @include('billing.invoice-subcription')
+        @livewire('billing.invoice-subcription')
 
         <x-jet-section-border />
 
