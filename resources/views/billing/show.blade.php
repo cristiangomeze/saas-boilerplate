@@ -6,18 +6,22 @@
     </x-slot>
 
     <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-        @livewire('billing.current-subcription-plan')
+        <livewire:billing.current-subcription-plan/>
         
         <x-jet-section-border />
 
-        @livewire('billing.payment-method')
+        <livewire:billing.payment-method/>
 
-        <x-jet-section-border />
+        @if(Auth::user()->hasBraintreeId())
+            <x-jet-section-border />
 
-        @livewire('billing.invoice-subcription')
+            <livewire:billing.invoice-subcription/>
+        @endif
 
-        <x-jet-section-border />
+        @if(Auth::user()->isSubscribed())
+            <x-jet-section-border />
 
-        @livewire('billing.cancel-subcription-plan')       
+            <livewire:billing.cancel-subcription-plan/> 
+        @endif    
     </div>
 </x-app-layout>
