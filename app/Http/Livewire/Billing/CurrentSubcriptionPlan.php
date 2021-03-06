@@ -2,51 +2,101 @@
 
 namespace App\Http\Livewire\Billing;
 
-use App\Models\Plan;
+use Braintree\ClientToken;
 use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
 
 class CurrentSubcriptionPlan extends Component
 {
+    public $hideWithEvents = false;
+
+    public $plan = false;
+
     public $choosingSubcriptionPlan = false;
 
     public $choosingYearlyPlan = false;
 
-    public $plan;
+    public $confirmingSubcriptionPurchase = false;
 
-    public function chooseSubcriptionPlan()
+    public $listeners  = ['addedPaymentMethod' => 'confirmSubcriptionPurchase'];
+
+
+    public function mount()
     {
+        if (! auth()->user()->isSubscribed()) $this->choosingSubcriptionPlan = true;
+
+        if (auth()->user()->hasDefaultPaymentMethod()) $this->dispatchBrowserEvent('payment-method-form', ['shown' => true]);
+    }
+
+    public function confirmSubcriptionPurchase()
+    {
+        $this->dispatchBrowserEvent('payment-method-form', ['shown' => false]);
+
+        $this->hideWithEvents = false;
+        
+        if (is_null($this->plan)) return;
+
+        $this->confirmingSubcriptionPurchase = true;
+    }
+
+    public function subcribeNow()
+    {
+        $this->confirmingSubcriptionPurchase = false;
+
+        $this->handleSubcription();
+    }
+
+    public function chosenPlan($plan)
+    {
+        $this->plan = (string) $plan;
+
         $this->resetErrorBag();
         
         Validator::make(
             ['plan' => $this->plan],
-            ['plan' => 'required|exists:App\Models\Plan,braintree_plan'],
+            ['plan' => 'required'],
         )->validate();
 
         // Check if has a defaultPayment
         if (! auth()->user()->hasDefaultPaymentMethod()) {
-            $this->addError('plan', 'You don\'t have a default payment method.');
+            $this->hideWithEvents = true;
+            
+            $this->dispatchBrowserEvent('payment-method-form', ['shown' => true]);
+            // $this->addError('plan', 'You don\'t have a default payment method.');
+
+            return;
+        }
+
+        $this->handleSubcription();
+    }
+
+    protected function handleSubcription()
+    {
+        if (is_null($this->plan)) {
+            $this->addError('plan', 'You must choose a plan.');
 
             return;
         }
 
         // Check if you want to switch to the same plan
-        if ($this->plan === $this->currentPlan?->braintree_plan) {
+        if ($this->plan === auth()->user()->subscription()?->braintree_id) {
             $this->addError('plan', 'You must choose a different plan than the current one.');
 
             return;
         }
-        
-        $this->currentPlan 
-            ? $this->changePlan()
+
+        auth()->user()->subscription()
+            ? $this->swapSubcriptionPlan()
             : $this->createNewSubscription();
- 
+
         $this->choosingSubcriptionPlan = false;
+
+        $this->dispatchBrowserEvent('payment-method-form', ['shown' => true]);
 
         $this->emit('chosenPlan');
     }
 
-    protected function changePlan()
+    protected function swapSubcriptionPlan()
     {
         auth()->user()
             ->subscription('default')
@@ -58,29 +108,21 @@ class CurrentSubcriptionPlan extends Component
     {
         auth()->user()
             ->newSubscription('default', $this->plan)
-            ->trialDays(
-                Plan::whereBraintreePlan($this->plan)->first()?->trial_duration ?: 0
-            )
+            ->trialDays(config('boilerplate.billables.user.trial_days'))
             ->create();
     }
 
-    public function getCurrentPlanProperty()
+    public function getTokenProperty()
     {
-        return Plan::all()->filter(fn ($plan) => auth()
-            ->user()
-            ->isSubscribedToPlan($plan->braintree_plan)
-        )->first();
+        return ClientToken::generate(
+            auth()->user()->braintree_id ? ['customerId' => auth()->user()->braintree_id] : []
+        );
     }
 
     public function render()
     {
-        if (! auth()->user()->isSubscribed()) $this->choosingSubcriptionPlan = true;
-
         return view('billing.current-subcription-plan', [
-            'plans' => Plan::query()
-                ->when($this->choosingYearlyPlan, fn ($query) => $query->yearly())
-                ->unless($this->choosingYearlyPlan, fn ($query) => $query->montly())
-                ->get()
+            'plans' => config('boilerplate.billables.user.plans')
         ]);
     }
 }

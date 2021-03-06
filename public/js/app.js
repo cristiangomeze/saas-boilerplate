@@ -3852,6 +3852,8 @@ dropin.create({
     instance.requestPaymentMethod(function (requestPaymentMethodErr, payload) {
       axios.post('/payment-method', {
         payload: payload
+      }).then(function () {
+        return Livewire.emit('addedPaymentMethod');
       });
     });
   });

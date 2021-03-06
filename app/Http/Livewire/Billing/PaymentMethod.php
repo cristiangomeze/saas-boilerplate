@@ -7,15 +7,15 @@ use Livewire\Component;
 
 class PaymentMethod extends Component
 {
-    public function render()
-    {
-        return view('billing.payment-method');
-    }
-    
     public function getTokenProperty()
     {
         return ClientToken::generate(
             auth()->user()->braintree_id ? ['customerId' => auth()->user()->braintree_id] : []
         );
+    }
+
+    public function render()
+    {
+        return view('billing.payment-method');
     }
 }

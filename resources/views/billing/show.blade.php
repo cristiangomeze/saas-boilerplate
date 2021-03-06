@@ -8,7 +8,9 @@
     <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
         <livewire:billing.current-subcription-plan/>
         
-        <x-jet-section-border />
+        <div x-data="{ shown: false }" @payment-method-form.window="shown = event.detail.shown">
+            <x-jet-section-border/>
+        </div>
 
         <livewire:billing.payment-method/>
 

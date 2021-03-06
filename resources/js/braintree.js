@@ -9,7 +9,8 @@ dropin.create({
   }, function (createErr, instance) {
     updatePaymentMethod.addEventListener('click', function () {
       instance.requestPaymentMethod(function (requestPaymentMethodErr, payload) {
-        axios.post('/payment-method', {payload:payload})
+        axios.post('/payment-method', { payload:payload })
+          .then(() =>  Livewire.emit('addedPaymentMethod'))
       });
     });
   });
